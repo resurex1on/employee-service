@@ -1,9 +1,10 @@
-import './App.css';
+import './HomePage.css';
 
-const HomePage = function () {
+const HomePage = () => {
     return (
-        <></>
-  );
+        <div>
+        </div>
+    );
 }
 
 export default HomePage;

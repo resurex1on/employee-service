@@ -1,0 +1,59 @@
+.leftPanel {
+    background-color: rgb(240, 244, 247);
+    height: 100%;
+    box-shadow: rgb(221 232 241) 1px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftPanel-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+}
+
+.leftPanel-list-item {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.leftPanel-list-item.home {
+    margin-top: 24px;
+    width: 32px;
+    height: 32px;
+}
+
+.leftPanel-list-item-image {
+    width: 100%;
+    height: 100%;
+}
+
+.leftPanel-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.leftPanel-profile-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+.leftPanel-profile-status {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 20px;
+}
+
+.leftPanel-profile-icon-image, .leftPanel-profile-status-image {
+    width: 100%;
+    border-radius: 90px;
+}
