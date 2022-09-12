@@ -1,0 +1,57 @@
+.schedule-month {
+    display: flex;
+    flex-direction: column;
+    margin-right: 24px;
+}
+
+.schedule-month-day {
+    width: 45px;
+    text-align: center;
+}
+
+.schedule-month-week {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.schedule-month-title-name {
+    text-align: center;
+    margin: 24px 0px 24px 0px;
+}
+
+.schedule-month-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 12px;
+    margin-right: 8px;
+    color: #00D8F6;
+}
+
+.schedule-month-title-year {
+    color: #00D8F6;
+    font-weight: bold;
+}
+
+.schedule-navigator {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-right: 40px;
+    margin-top: 8px;
+}
+
+.schedule-navigator-trigger {
+    color: #00D8F6;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: .3s;
+}
+
+.schedule-navigator-trigger:hover {
+    opacity: 1;
+}
