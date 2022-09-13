@@ -1,10 +1,18 @@
+.schedule {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    border-left: 1px solid rgb(221, 232, 241);
+}
+
 .schedule-month {
     display: flex;
     flex-direction: column;
-    margin-right: 24px;
 }
 
 .schedule-month-day {
+    cursor: pointer;
     width: 45px;
     text-align: center;
 }
@@ -40,18 +48,23 @@
 .schedule-navigator {
     display: flex;
     justify-content: space-between;
-    margin-left: 16px;
-    margin-right: 40px;
-    margin-top: 8px;
+    width: calc(100% - 24px);
+    margin: 0 auto;
 }
 
 .schedule-navigator-trigger {
+    margin-top: 16px;
     color: #00D8F6;
+    font-weight: bold;
     cursor: pointer;
-    opacity: 0.6;
+    border-bottom: 2px solid transparent;
     transition: .3s;
 }
 
 .schedule-navigator-trigger:hover {
-    opacity: 1;
+    border-bottom: 2px solid #00D8F6;
+}
+
+.schedule-tasks { 
+    margin-top: 48px;
 }

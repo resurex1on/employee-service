@@ -1,0 +1,73 @@
+.tasks {
+    width: calc(100% - 24px);
+    margin: 0 auto;
+}
+
+.tasks-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks-date {
+    color: #00D8F6;
+    font-weight: bold;
+}
+
+.tasks-list-item {
+    margin-bottom: 24px;
+    color: rgb(0, 28, 61);
+}
+
+.tasks-list-item:first-child {
+    margin-top: 24px;
+}
+
+.tasks-list-item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks-list-item-title-name.normal{
+    color: #FFCC00;
+}
+
+.tasks-list-item-title-name.bad{
+    color: #FF3300;
+}
+
+.tasks-list-item-title-name.well{
+    color: #33FF66;
+}
+
+.tasks-list-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.tasks-list-item-info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 12px;
+}
+
+.tasks-list-item-title {
+    margin-bottom: 8px;
+}
+
+.tasks-list-item-title-duration {
+    font-size: 14px;
+    color: #00D8F6;
+}
+
+.tasks-list-item-info-description {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 4px;
+}

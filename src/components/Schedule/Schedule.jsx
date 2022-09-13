@@ -1,13 +1,16 @@
 import { useRef, useState } from 'react';
+import Tasks from '../Tasks/Tasks';
 import './Schedule.css';
 import { getNameOfMonth } from './Schedule.helper';
 
-const date = new Date()
 
 const Schedule = () => {
     const numberOfDays = useRef(null);
-    const [month, setMonth] = useState(() => date.getMonth());
-    const [year, setYear] = useState(() => date.getFullYear());
+    const date = useRef(new Date());
+
+    const [month, setMonth] = useState(() => date.current.getMonth());
+    const [year, setYear] = useState(() => date.current.getFullYear());
+    const [day, setDay] = useState(0);
 
     let currentWeek = 0;
 
@@ -56,7 +59,7 @@ const Schedule = () => {
                     currentWeek++;
                     return <div className='schedule-month-week'> {getDaysOfMonth(month).filter((item) => item <= ((currentWeek) * 7) + 1 && item > ((currentWeek - 1) * 7)).map((day) => {
 
-                        return <div className='schedule-month-day'>{day}</div>
+                        return <div className='schedule-month-day' onClick={() => setDay(day)}>{day}</div>
                     })}
                     </div>
                 })}
@@ -66,7 +69,9 @@ const Schedule = () => {
                 <p className='schedule-navigator-trigger' onClick={handleClickNext}>next</p>
             </div>
 
-            
+            <div className="schedule-tasks">
+                <Tasks day={day} month={month} year={year}/>
+            </div>
         </section>
     );
 }
