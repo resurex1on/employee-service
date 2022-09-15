@@ -1,6 +1,7 @@
 .tasks {
     width: calc(100% - 24px);
     margin: 0 auto;
+    height: 100%;
 }
 
 .tasks-title {
@@ -8,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .tasks-date {
@@ -15,13 +17,14 @@
     font-weight: bold;
 }
 
+.tasks-list {
+    overflow-x: hidden;
+    height: calc(100% - 48px);
+}
+
 .tasks-list-item {
     margin-bottom: 24px;
     color: rgb(0, 28, 61);
-}
-
-.tasks-list-item:first-child {
-    margin-top: 24px;
 }
 
 .tasks-list-item-title {
@@ -30,15 +33,15 @@
     align-items: center;
 }
 
-.tasks-list-item-title-name.normal{
+.tasks-list-item-title-name.normal {
     color: #FFCC00;
 }
 
-.tasks-list-item-title-name.bad{
+.tasks-list-item-title-name.bad {
     color: #FF3300;
 }
 
-.tasks-list-item-title-name.well{
+.tasks-list-item-title-name.well {
     color: #33FF66;
 }
 

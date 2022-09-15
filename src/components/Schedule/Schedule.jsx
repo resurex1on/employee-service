@@ -49,28 +49,31 @@ const Schedule = () => {
 
     return (
         <section className='schedule'>
-            <div className='schedule-month'>
-                <div className="schedule-month-title">
-                    <h1 className='schedule-month-title-name'>{getNameOfMonth(month)}</h1>
-                    <p className='schedule-month-title-year'>{year}</p>
-                </div>
-
-                {[1, 2, 3, 4, 5].map(() => {
-                    currentWeek++;
-                    return <div className='schedule-month-week'> {getDaysOfMonth(month).filter((item) => item <= ((currentWeek) * 7) + 1 && item > ((currentWeek - 1) * 7)).map((day) => {
-
-                        return <div className='schedule-month-day' onClick={() => setDay(day)}>{day}</div>
-                    })}
+            <div className="schedule-container">
+                <div className='schedule-month'>
+                    <div className="schedule-month-title">
+                        <h1 className='schedule-month-title-name'>{getNameOfMonth(month)}</h1>
+                        <p className='schedule-month-title-year'>{year}</p>
                     </div>
-                })}
+
+                    {[1, 2, 3, 4, 5].map(() => {
+                        currentWeek++;
+                        return <div className='schedule-month-week'> {getDaysOfMonth(month).filter((item) => item <= ((currentWeek) * 7) + 1 && item > ((currentWeek - 1) * 7)).map((day) => {
+
+                            return <div className='schedule-month-day' onClick={() => setDay(day)}>{day}</div>
+                        })}
+                        </div>
+                    })}
+                </div>
+                <div className='schedule-navigator'>
+                    <p className='schedule-navigator-trigger' onClick={handleClickPrev}>prev</p>
+                    <p className='schedule-navigator-trigger' onClick={handleClickNext}>next</p>
+                </div>
             </div>
-            <div className='schedule-navigator'>
-                <p className='schedule-navigator-trigger' onClick={handleClickPrev}>prev</p>
-                <p className='schedule-navigator-trigger' onClick={handleClickNext}>next</p>
-            </div>
+
 
             <div className="schedule-tasks">
-                <Tasks day={day} month={month} year={year}/>
+                <Tasks day={day} month={month} year={year} />
             </div>
         </section>
     );

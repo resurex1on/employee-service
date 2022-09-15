@@ -1,10 +1,17 @@
 .schedule {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
     position: relative;
     border-left: 1px solid rgb(221, 232, 241);
+    width: 370px;
 }
+
+/* .schedule-container {
+    height: 40%;
+    min-height: 500px;
+} */
 
 .schedule-month {
     display: flex;
@@ -67,4 +74,5 @@
 
 .schedule-tasks { 
     margin-top: 48px;
+    height: calc(100% - 340px);
 }
