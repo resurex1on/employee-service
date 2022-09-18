@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { useState } from 'react';
 import { getAllTasks } from '../../helpers/back.helper';
 import './Tasks.css';
@@ -77,10 +79,10 @@ const tasksMock = [
     }
 ];
 const Tasks = ({ day, month, year }) => {
-    const [tasks, setTasks] = useState(newValue => {
-        console.log(getAllTasks());
-        return getAllTasks();
-    });
+    // const [tasks, setTasks] = useState(newValue => {
+    //     console.log(getAllTasks());
+    //     return getAllTasks();
+    // });
 
     return (
         <section className='tasks'>

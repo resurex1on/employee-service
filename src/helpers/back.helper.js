@@ -11,4 +11,12 @@ const getAllTasks = async () => {
     return data
 }
 
-export {getAllTasks}
+const createTest = async (test) => {
+    await fetch(`${uri}/tests`, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(test)
+    });
+}
+
+export {getAllTasks, createTest}

@@ -1,3 +1,4 @@
+import React from 'react';
 import News from '../../components/News/News';
 import Schedule from '../../components/Schedule/Schedule';
 import './HomePage.css';

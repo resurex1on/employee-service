@@ -1,0 +1,62 @@
+.createBlock-info-label {
+    margin-right: 16px;
+}
+
+.createBlock-info-input {
+    border: 0px;
+    border-bottom: 1px solid rgb(221, 232, 241);
+    outline: 0;
+    outline-offset: 0; 
+    width: 100%;
+}
+
+.createBlock-info-input:focus {
+    border-bottom: 1px solid #00D8F6;
+}
+
+.createBlock-info-textarea {
+    border: 1px solid rgb(221, 232, 241);
+    outline: 0;
+    outline-offset: 0; 
+    width: 100%;
+    height: 120px;
+}
+
+.createBlock-info-textarea:focus {
+    border: 1px solid #00D8F6;
+}
+
+
+.createBlock-info-title {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.createBlock-info-description {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.createBlock-type {
+    display: flex;
+}
+
+.createBlock-type-select {
+    margin-left: 12px;
+    border: 0;
+    border-bottom: 1px solid rgb(221, 232, 241);
+}
+
+.createBlock-type-select:focus {
+    outline: 0;
+    outline-offset: 0; 
+    border-bottom: 1px solid #00D8F6;
+}
+
+.createBlock {
+    border: 1px solid rgb(221, 232, 241);
+    padding: 8px ;
+    margin-bottom: 12px;
+}

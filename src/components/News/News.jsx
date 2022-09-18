@@ -1,3 +1,4 @@
+import React from 'react';
 import './News.css';
 import authorImg from '../../assets/images/user.jpg';
 import userImg from '../../assets/images/user2.jpg';
