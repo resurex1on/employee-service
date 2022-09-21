@@ -9,15 +9,16 @@ import {
   Route
 } from "react-router-dom";
 import TestsPage from './pages/TestsPage/TestsPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 const App = function () {
   return (
     <Router>
       <Header />
       <div className='app-container'>
-        <div className='app-container-panel'>
+        {(window.location.pathname !== '/login') ? <div className='app-container-panel'>
           <LeftPanel />
-        </div>
+        </div> : <></>}
 
         <div className='app-container-content'>
 
@@ -25,8 +26,9 @@ const App = function () {
             <Route path='/home' element={<HomePage />} />
             <Route path='/' element={<HomePage />} />
             <Route path='/tests' element={<TestsPage />} />
+            <Route path='/login' element={<LoginPage />}/>
           </Routes>
-        </div>
+        </div> 
       </div>
     </Router>
 

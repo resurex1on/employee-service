@@ -1,3 +1,32 @@
 .multiSelect {
     margin-top: 12px;
 }
+
+.multiSelect-question {
+    display: flex;
+}
+
+.multiSelect-question-label {
+    margin-right: 12px;
+}
+
+.multiSelect-answers {
+    margin-top: 12px;
+}
+
+.multiSelect-answers-item {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.multiSelect-answers-item-input {
+    width: 60% !important;
+}
+
+.multiSelect-newAnswer {
+    color: #00D8F6;
+    cursor: pointer;
+    margin-top: 12px;
+    display: block;
+}

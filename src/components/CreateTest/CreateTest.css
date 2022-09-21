@@ -46,3 +46,17 @@
 .createTest-newQuestion:hover {
     border-bottom: 2px solid #00D8F6;
 }
+
+.createTest-submit {
+    width: 120px;
+    height: 60px;
+    background-color: #00D8F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
