@@ -32,3 +32,25 @@
 .testsPage-create {
     height: calc(100% - 58px);
 }
+
+.testsPage-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testsPage-list-item:first-child {
+    width: calc(50% - 30px);
+    margin-left: 24px;
+    margin-right: 6px;
+}
+
+.testsPage-list-item:last-child {
+    width: calc(50% - 30px);
+    margin-left: 6px;
+    margin-right: 24px;
+}
+
+.testsPage-users {
+    padding: 12px 24px 12px 24px;
+}

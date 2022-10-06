@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import TestsPage from './pages/TestsPage/TestsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import StatisticPage from './pages/StatisticPage/StatisticPage';
 
 const App = function () {
   return (
@@ -26,7 +27,9 @@ const App = function () {
             <Route path='/home' element={<HomePage />} />
             <Route path='/' element={<HomePage />} />
             <Route path='/tests' element={<TestsPage />} />
-            <Route path='/login' element={<LoginPage />}/>
+            <Route path='/login' element={<LoginPage type='login' />}/>
+            <Route path='/register' element={<LoginPage type = 'register'/>}/>
+            <Route path='/statistic' element={<StatisticPage />}/>
           </Routes>
         </div> 
       </div>

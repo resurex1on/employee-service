@@ -43,7 +43,7 @@ const LeftPanel = function () {
                 </li>
                 <li className='leftPanel-list-item'>
                     <Tooltip content={'Statistic'}>
-                        <img className='leftPanel-list-item-image' src={graphImg} alt="" />
+                        <Link to='/statistic'> <img className='leftPanel-list-item-image' src={graphImg} alt="" /> </Link>
                     </Tooltip>
                 </li>
             </ul>

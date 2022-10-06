@@ -1,11 +1,24 @@
 // import axios from 'axios';
 const axios = require('axios').default
 
-const uri = 'https://f66d-193-16-224-4.eu.ngrok.io';
+const uri = 'https://53eb-193-16-224-9.eu.ngrok.io';
 
 const getAllTasks = async () => {
     const response = await axios({
-        url: `${uri}/tests`,
+        url: `${uri}/tasks`,
+        method: 'GET',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    return response.data
+}
+
+const getTests = async (authorId) => {
+    const response = await axios({
+        url: authorId ? `${uri}/tests/${authorId}` : `${uri}/tests`,
         method: 'GET',
         mode: 'no-cors',
         headers: {
@@ -46,7 +59,22 @@ const logIn = async (userData) => {
 
 
     return response.data
-
 }
 
-export { getAllTasks, createTest, logIn }
+const register = async (userData) => {
+    const response = await axios({
+        url: `${uri}/register`,
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        withCredentials: true,
+        data: JSON.stringify(userData)
+    })
+
+
+    return response.data
+}
+
+export { getAllTasks, createTest, logIn, getTests, register}
