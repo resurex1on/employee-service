@@ -1,0 +1,33 @@
+.icon svg {
+    stroke: rgb(240, 244, 247);
+    fill: rgb(240, 244, 247);
+}
+
+.icon {
+    stroke: rgb(240, 244, 247);
+    fill: rgb(240, 244, 247);
+}
+
+.icon-active svg {
+    stroke: rgb(255, 215, 0);
+    fill: rgb(255, 215, 0);
+}
+
+.icon-active {
+    stroke: rgb(255, 215, 0);
+    fill: rgb(255, 215, 0);
+    
+}
+
+
+.rate-answers {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.rate-answers-items {
+    margin-left: 12px;
+}

@@ -41,7 +41,7 @@ const SingleSelect = ({ index }) => {
                             });
                         }} />
 
-                        <label htmlFor='answer-isCorrect'>Is Correct</label>
+                        {/* <label htmlFor='answer-isCorrect'>Is Correct</label>
                         <input name='answer-isCorrect' type='radio' onChange={(event => {
                             setTestObj((currentTestObj) => {
                                 const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
@@ -53,7 +53,7 @@ const SingleSelect = ({ index }) => {
 
                                 return { ...currentTestObj, questions: newQuestions }
                             });
-                        })} />
+                        })} /> */}
                     </div>
                 })}
             </div>

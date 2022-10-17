@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import CreateTest from '../../components/CreateTest/CreateTest';
 import TestList from '../../components/TestList/TestList';
 import UsersList from '../../components/UsersList/UsersList';
-import { createTest } from '../../helpers/back.helper';
 import './TestsPage.css';
 
 const testMock = {
@@ -31,7 +30,7 @@ const TestsPage = () => {
                     </div>
 
                     <div className='testsPage-list-item'>
-                        <TestList authorId={132355} />
+                        <TestList shouldShowsUserList={true} />
                     </div>
                 </div>
             case 2:

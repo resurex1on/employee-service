@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { TestContext } from '../CreateTest/CreateTest';
 import './TestDisplay.css';
+import Rate from '../Rate/Rate';
 
 const TestDisplay = () => {
     const [testObj, setTestObj] = useContext(TestContext);
@@ -45,6 +46,11 @@ const TestDisplay = () => {
                         </div>
                         <div className='testDisplay-question-submit'>Submit</div>
                     </div> : <> </>}
+                </>
+
+            case 'rate':
+                return <> {(question.title !== '') ?
+                    <Rate /> : <> </>}
                 </>
 
             default:

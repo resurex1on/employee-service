@@ -41,7 +41,9 @@ const LoginPage = ({ type }) => {
     };
 
     const submitUserData = async () => {
-       (type === 'login') ? await logIn(userData) : await register(userData)
+       const loginData = (type === 'login') ? await logIn(userData) : await register(userData);
+
+       document.cookie = encodeURIComponent('token') + '=' + encodeURIComponent(loginData.token);
     };
 
     return (
