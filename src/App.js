@@ -11,6 +11,7 @@ import {
 import TestsPage from './pages/TestsPage/TestsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import StatisticPage from './pages/StatisticPage/StatisticPage';
+import Profile from './pages/Profile/Profile';
 
 const App = function () {
   return (
@@ -30,6 +31,7 @@ const App = function () {
             <Route path='/login' element={<LoginPage type='login' />}/>
             <Route path='/register' element={<LoginPage type = 'register'/>}/>
             <Route path='/statistic' element={<StatisticPage />}/>
+            <Route path='/profile' element={<Profile isCurrentUserOwner={true} />}/>
           </Routes>
         </div> 
       </div>

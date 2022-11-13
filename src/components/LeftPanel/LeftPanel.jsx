@@ -57,7 +57,7 @@ const LeftPanel = function () {
 
                 <div className="leftPanel-profile-icon">
                     <Tooltip content={'Profile'}>
-                        <img className="leftPanel-profile-icon-image" src={userImg} alt="" />
+                        <Link to='/profile'> <img className="leftPanel-profile-icon-image" src={userImg} alt="" /> </Link>
                     </Tooltip>
                 </div>
             </div>
