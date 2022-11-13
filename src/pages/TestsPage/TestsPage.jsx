@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CreateTest from '../../components/CreateTest/CreateTest';
 import TestList from '../../components/TestList/TestList';
 import UsersList from '../../components/UsersList/UsersList';
+import CreateTask from '../../components/CreateTask/CreateTask';
 import './TestsPage.css';
 
 const testMock = {
@@ -39,7 +40,7 @@ const TestsPage = () => {
                 </div>
             case 3:
                 return <div className='testsPage-calendar'>
-                    <h1>Calendar</h1>
+                    <CreateTask />
                 </div>
         }
     };
@@ -48,9 +49,9 @@ const TestsPage = () => {
         <div className='testsPage-container'>
             <ul className="testsPage-navbar">
                 <li className={activeTab === 0 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(0)}>Create new test</li>
+                <li className={activeTab === 3 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(3)}>Create task</li>
                 <li className={activeTab === 1 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(1)}>Tests list</li>
                 <li className={activeTab === 2 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(2)}>Users list</li>
-                <li className={activeTab === 3 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(3)}>Calendar</li>
             </ul>
 
             {getContent()}

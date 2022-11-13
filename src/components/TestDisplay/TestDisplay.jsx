@@ -50,8 +50,16 @@ const TestDisplay = () => {
 
             case 'rate':
                 return <> {(question.title !== '') ?
-                    <Rate /> : <> </>}
-                </>
+                <div className='testDisplay-question'>
+                    <h2 className='testDisplay-question-index'>Question {index + 1}</h2>
+                    <p className='testDisplay-question-title'>{question.title}</p>
+
+                    <div className="testDisplay-question-answers">
+                        {question.answers.length}
+                    </div>
+                    <div className='testDisplay-question-submit'>Submit</div>
+                </div> : <> </>}
+            </>
 
             default:
                 return <></>

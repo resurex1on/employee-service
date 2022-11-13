@@ -4,25 +4,6 @@ import { getTests, getUserTests} from '../../helpers/back.helper';
 import { useEffect } from 'react';
 
 const TestList = ({ shouldShowsUserList = false }) => {
-
-    const filterTestsByAuthor = (tests) => {
-       return tests.filter(test => {
-            return test.authorId === 1
-        });
-    };
-
-    const getNewItems = async () => {
-        let newItems = [];
-        if(!shouldShowsUserList) {
-            newItems = await getTests()
-        } else {
-            newItems = filterTestsByAuthor(await getTests());
-        }
-        
-        if (newItems)
-         return newItems;
-    };
-
     const [tests, setTests] = useState([]);
 
     useEffect(() => {
@@ -31,9 +12,26 @@ const TestList = ({ shouldShowsUserList = false }) => {
 
             setTests(items)
         }
-
         fetchData();
     }, []);
+
+    const filterTestsByAuthor = (tests) => {
+        return tests.filter(test => {
+             return test.authorId === 1
+         });
+     };
+ 
+     const getNewItems = async () => {
+         let newItems = [];
+         if(!shouldShowsUserList) {
+             newItems = await getTests()
+         } else {
+             newItems = filterTestsByAuthor(await getTests());
+         }
+         
+         if (newItems)
+          return newItems;
+     };
 
     return (
         <div className='testList'>

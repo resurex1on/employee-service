@@ -40,10 +40,21 @@ const CreateBlock = () => {
                         <select className='createBlock-type-select' name='questionType' value={question.type} onChange={(event) => setTestObj((currentTestObj) => {
                             const updatedQuestions = currentTestObj.questions;
                             const questionType = event.target.value;
-                            if(questionType === 'rate') {
+
+                            updatedQuestions[index] = {
+                                type: questionType,
+                                title: '',
+                                answers: [{
+                                    id: 0,
+                                    text: '',
+                                    isCorrect: false
+                                }]
+                            }
+
+                            if (questionType === 'rate') {
                                 updatedQuestions[index] = {
                                     ...updatedQuestions[index],
-                                    answers : [{
+                                    answers: [{
                                         id: 0,
                                         isActive: 0
                                     },
@@ -65,7 +76,6 @@ const CreateBlock = () => {
                                     }]
                                 }
                             }
-                            updatedQuestions[index].type = questionType;
 
                             return {
                                 ...currentTestObj,

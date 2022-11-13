@@ -43,7 +43,7 @@ const Rate = ({ index }) => {
                 <p>Answers:</p>
 
                 <div className='rate-answers-items' ref={answersRef}>
-                {testObj.questions[index].answers.map((answer, indexAnswer) => {
+                {(testObj.questions[index]) ? (testObj.questions[index].answers.map((answer, indexAnswer) => {
                     return <HandySvg
                     onMouseOver={(event) => {
                     const eventItemId = indexAnswer;
@@ -54,7 +54,7 @@ const Rate = ({ index }) => {
                     width="32"
                     height="32"
                 />
-                })}
+                })) : <></>}
                     </div>
             </div>
         </div>

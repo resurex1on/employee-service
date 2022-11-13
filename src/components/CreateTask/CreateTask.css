@@ -1,0 +1,154 @@
+.createTask {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.createTask-block-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.createTask-block-row.start{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start ;
+    align-items: center;
+}
+
+.createTask-input-date {
+    margin-left: 12px;
+}
+
+.createTask-block-item.date-to {
+    margin-left: 24px;
+}
+
+.createTask-block-item.start.repeat {
+    margin-left: 12px;
+}
+
+.createTask-input-repeat {
+    margin-left: 12px;
+}
+
+.createTask-title {
+    margin-left: 12px;
+}
+
+.createTask {
+    padding: 0px 5px 0px 5px;
+}
+
+.createTask-name {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.create-task-subtitle {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.createTask-userlist {
+    margin-top: 6px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: scroll;
+}
+
+.createTask-search.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.createTask-search.input {
+    margin-left: 12px;
+}
+
+.createTask-search.label {
+    width: 84px;
+}
+
+.input:focus {
+    border-bottom: 1px solid #00D8F6;
+}
+
+.createTask-input-date {
+    border: 1px solid rgb(221, 232, 241);
+    border-radius: 2px;
+    outline: none;
+    padding-left: 2px;
+}
+
+.createTask-input-date:focus {
+    border: 1px solid #00D8F6;
+}
+
+.testList-test {
+    display: flex;
+    flex-direction: row;
+}
+
+.selectTest {
+    border: 1px solid rgb(221, 232, 241);
+    border-radius: 2px;
+    outline: none;
+    padding-left: 2px;
+    width: calc(100% - 100px);
+    height: 19.5;
+}
+
+.selectTest:focus {
+    border: 1px solid #00D8F6;
+}
+
+.testBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.testLabel {
+    width: 92px;
+}
+
+.createTask-usersList-item-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    margin-right: 12px;
+}
+
+.createTask-usersList-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 24px;
+    padding: 8px 12px 8px 12px;
+    background-color: rgb(240, 244, 247);
+    color: #00D8F6;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.createTask-usersList-item:hover {
+    background-color: #00D8F6;
+    color: #ffffff;
+}
+
+.createTask-usersList {
+    display: flex;
+}
+
+.createTask-usersList-item-position {
+    min-width: 200px;
+}
