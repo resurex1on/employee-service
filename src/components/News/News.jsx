@@ -141,10 +141,10 @@ const News = () => {
                                     <a className='news-test-button-link' href="#">Open</a>
                                 </div>
 
-                                <div className="news-test-reporter">
+                                {/* <div className="news-test-reporter">
                                     <p className='news-test-reporter-name'>Reporter: <span className='news-test-reporter-name-content'>{item.reporter}</span></p>
                                     <p className='news-test-reporter-time'>Date: {item.date}</p>
-                                </div>
+                                </div> */}
                             </div>
 
                         case 'action':
@@ -165,9 +165,9 @@ const News = () => {
                                     <a className='news-feedback-button-link' href="#">Open</a>
                                 </div>
 
-                                <div className="news-feedback-time">
+                                {/* <div className="news-feedback-time">
                                     <p className='news-feedback-reporter-time'>Date: {item.date}</p>
-                                </div>
+                                </div> */}
                             </div>
                         default:
                             return undefined

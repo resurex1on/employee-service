@@ -36,7 +36,7 @@ const CreateBlock = () => {
             {testObj.questions.map((question, index) => {
                 return <div className='createBlock'>
                     <div className='createBlock-type'>
-                        <p>Question type:</p>
+                        <p className='createBlock-type-label'>Question type:</p>
                         <select className='createBlock-type-select' name='questionType' value={question.type} onChange={(event) => setTestObj((currentTestObj) => {
                             const updatedQuestions = currentTestObj.questions;
                             const questionType = event.target.value;

@@ -1,17 +1,20 @@
 .schedule {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: space-between;
-    height: 100%;
+    align-items: center;
     position: relative;
-    border-left: 1px solid rgb(221, 232, 241);
-    width: 370px;
+    width: 100%;
+    margin-top: 24px;
 }
 
-/* .schedule-container {
-    height: 40%;
-    min-height: 500px;
-} */
+.schedule-container {
+    background-color: rgb(240, 244, 247);
+    padding: 24px 36px 24px 36px;
+    border-radius: 5px;
+    width: 33%;
+    height: 293px;
+}
 
 .schedule-month {
     display: flex;
@@ -20,8 +23,15 @@
 
 .schedule-month-day {
     cursor: pointer;
-    width: 45px;
+    width: 30px;
+    height: 30px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-right: 9px;
+    margin-left: 5px;
 }
 
 .schedule-month-week {
@@ -35,7 +45,6 @@
 
 .schedule-month-title-name {
     text-align: center;
-    margin: 24px 0px 24px 0px;
 }
 
 .schedule-month-title {
@@ -45,6 +54,7 @@
     margin-left: 12px;
     margin-right: 8px;
     color: #00D8F6;
+    margin-bottom: 24px;
 }
 
 .schedule-month-title-year {
@@ -73,6 +83,9 @@
 }
 
 .schedule-tasks { 
-    margin-top: 48px;
-    height: calc(100% - 340px);
+    height: 293px;
+    width: 50%;
+    background-color: rgb(240, 244, 247);
+    padding: 24px 36px 24px 36px;
+    border-radius: 5px;
 }

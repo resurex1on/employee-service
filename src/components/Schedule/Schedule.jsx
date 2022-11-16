@@ -59,7 +59,7 @@ const Schedule = () => {
 
                     {[1, 2, 3, 4, 5].map(() => {
                         currentWeek++;
-                        return <div className='schedule-month-week'> {getDaysOfMonth(month).filter((item) => item <= ((currentWeek) * 7) + 1 && item > ((currentWeek - 1) * 7)).map((day) => {
+                        return <div className='schedule-month-week'> {getDaysOfMonth(month).filter((item) => item <= ((currentWeek) * 7) && item > ((currentWeek - 1) * 7)).map((day) => {
 
                             return <div className='schedule-month-day' onClick={() => setDay(day)}>{day}</div>
                         })}

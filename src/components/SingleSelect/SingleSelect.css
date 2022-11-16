@@ -1,4 +1,6 @@
 .singleSelect {
+    width: 90%;
+    margin: 0 auto;
     margin-top: 12px;
 }
 
@@ -8,6 +10,8 @@
 
 .singleSelect-question-label {
     margin-right: 12px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .singleSelect-answers {

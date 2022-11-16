@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import Chart from "react-apexcharts";
 import './Profile.css';
 import userImg from '../../assets/images/user.jpg';
 import user2Img from '../../assets/images/user2.jpg';
 import gearIcon from '../../assets/images/gear.png';
+import News from '../../components/News/News';
 
 const userMock = {
     name: 'Vitaly Zhuk',
@@ -19,10 +21,31 @@ const userMock = {
 
         }
     ],
+    rates: [
+        {
+            date: '11.2'
+        }
+    ]
 };
 
 const Profile = ({ isCurrentUserOwner }) => {
     const [userData, setUserData] = useState(userMock);
+    const [diagram, setDiagram] = useState({
+        options: {
+            chart: {
+                id: "basic-bar"
+            },
+            xaxis: {
+                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+            }
+        },
+        series: [
+            {
+                name: "2022",
+                data: [4, 3, 3.5, 4, 5, 4.5, 4, 4, 3.5, 3.5, 4.5, 5]
+            }
+        ]
+    })
 
     return (
         <section className='profile'>
@@ -67,8 +90,22 @@ const Profile = ({ isCurrentUserOwner }) => {
                                 <p className='profile-banner-info-bottom-role'>{userData.role}</p>
                             </div>
                         </div>
-
                     </div>
+                </div>
+                <div className="profile-statistic">
+                    <div className='profile-statistic-body'>
+                        {diagram !== {} ? <Chart
+                            options={diagram.options}
+                            series={diagram.series}
+                            type="line"
+                            width='100%'
+                            height='100%'
+                        /> : <>Loading</>}
+                    </div>
+                </div>
+
+                <div className="profile-history">
+                    <News />
                 </div>
             </div>
         </section>

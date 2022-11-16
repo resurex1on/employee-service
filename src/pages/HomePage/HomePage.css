@@ -1,6 +1,83 @@
 .home-container {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+    max-width: 972px;
     width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.home-schedule {
+    width: 100%;
+}
+
+.home-actions {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home-actions-1on1, .home-actions-feedback {
+    background-color: rgb(240, 244, 247);
+    padding: 24px 36px 24px 36px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.home-actions-feedback {
+    width: 33%;
+}
+
+.home-actions-1on1-title, .home-actions-feedback-title {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.home-actions-1on1-title::after, .home-actions-feedback-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 4px;
+    background: linear-gradient(rgba(9, 30, 66, 0.13) 0px, rgba(9, 30, 66, 0.13) 1px, rgba(9, 30, 66, 0.08) 1px, rgba(9, 30, 66, 0) 4px);
+}
+
+.home-actions-1on1-title-text, .home-actions-feedback-title-text{
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+.home-actions-1on1-choose, .home-actions-feedback-choose {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home-actions-1on1-choose-select, .home-actions-feedback-choose-select {
+    border: 1px solid rgb(221, 232, 241);
+    border-radius: 2px;
+    outline: none;
+    padding-left: 2px;
+    width: 60%;
+    height: 19.5;
+}
+
+.home-actions-1on1-choose-select:focus, .home-actions-feedback:focus {
+    border: 1px solid #00D8F6;
+}
+
+.home-actions-1on1-choose-button, .home-actions-feedback-choose-button {
+    background-color: #00D8F6;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    padding: 6px 24px 6px 24px;
 }
