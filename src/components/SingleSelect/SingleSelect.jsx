@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import React, { useState, useContext, useEffect } from 'react';
 import { TestContext } from '../CreateTest/CreateTest';
 import './SingleSelect.css';
@@ -8,8 +9,7 @@ const SingleSelect = ({ index }) => {
     return (
         <div className='singleSelect'>
             <div className='singleSelect-question'>
-                <label className='singleSelect-question-label' htmlFor='question'>Question:</label>
-                <input className='createBlock-info-input' name='question' type="text" onChange={(event) => {
+                <TextField id="outlined-basic" label="Question" variant="outlined" className='createBlock-info-input' name='question' type="text" onChange={(event) => {
                         setTestObj((currentTestObj) => {
                             const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
 
@@ -23,12 +23,12 @@ const SingleSelect = ({ index }) => {
                 }}/>
             </div>
 
+            <p className='singleSelect-title'>Answers:</p>
+
             <div className='singleSelect-answers'>
-                <p>Answers:</p>
                 {testObj.questions[index].answers.map((answer, indexAnswer) => {
                     return <div className='singleSelect-answers-item'>
-                        <label htmlFor='answer-text'>Answer {indexAnswer + 1}</label>
-                        <input name='answer-text' className='singleSelect-answers-item-input createBlock-info-input' type='text' onChange={(event) => {
+                        <TextField id="outlined-basic" label={"Answer " + (indexAnswer + 1)} variant="standard" name='answer-text' className='singleSelect-answers-item-input createBlock-info-input' type='text' onChange={(event) => {
                             setTestObj((currentTestObj) => {
                                 const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
 

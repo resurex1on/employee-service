@@ -1,3 +1,4 @@
+import { TextField, Typography } from '@mui/material';
 import React, { useState, useContext, useEffect } from 'react';
 import { TestContext } from '../CreateTest/CreateTest';
 import './MultiSelect.css';
@@ -8,8 +9,7 @@ const MultiSelect = ({ index }) => {
     return (
         <div className='multiSelect'>
             <div className='multiSelect-question'>
-                <label className='multiSelect-question-label' htmlFor='question'>Question:</label>
-                <input className='createBlock-info-input multiSelect-info-input' name='question' type="text" onChange={(event) => {
+                <TextField id="standard-basic" label='Question' variant="standard" className='createBlock-info-input multiSelect-info-input' name='question' type="text" onChange={(event) => {
                      setTestObj((currentTestObj) => {
                         const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
 
@@ -23,12 +23,19 @@ const MultiSelect = ({ index }) => {
                 }}/>
             </div>
 
+            <Typography
+                variant="subtitle1"
+                noWrap
+                component="div"
+                sx={{ display: { xs: 'none', sm: 'block' } }}
+              >
+                Answers:
+              </Typography>
+              
             <div className='multiSelect-answers'>
-                <p>Answers:</p>
                 {testObj.questions[index].answers.map((answer, indexAnswer) => {
                     return <div className='singleSelect-answers-item'>
-                        <label htmlFor='answer-text'>Answer {indexAnswer  + 1}</label>
-                        <input name='answer-text' className='singleSelect-answers-item-input createBlock-info-input' type='text' onChange={(event) => {
+                        <TextField id="standard-basic" label={'Answer ' + (indexAnswer  + 1)} variant="standard" name='answer-text' className='singleSelect-answers-item-input createBlock-info-input' type='text' onChange={(event) => {
                             setTestObj((currentTestObj) => {
                                 const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
 

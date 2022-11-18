@@ -1,3 +1,4 @@
+import { TextField, TextareaAutosize } from '@mui/material';
 import React, { createContext, useState, useEffect } from 'react';
 import { createTest } from '../../helpers/back.helper';
 import CreateBlock from '../CreateBlock/CreateBlock';
@@ -23,7 +24,7 @@ const testMock = {
     ]
 };
 
-const CreateTest =  () => {
+const CreateTest = () => {
     const [testObj, setTestObj] = useState(testMock);
 
     useEffect(() => {
@@ -38,8 +39,7 @@ const CreateTest =  () => {
                     <div className="createTest-creating-content">
                         <div className='createBlock-info'>
                             <div className="createBlock-info-title">
-                                <label htmlFor='title' className='createBlock-info-label'>Title</label>
-                                <input name='title' className='createBlock-info-input' type="text" onChange={(event) => setTestObj((currentValue) => {
+                                <TextField id="standard-basic" label="Title" variant="standard" name='title' className='createBlock-info-input' type="text" onChange={(event) => setTestObj((currentValue) => {
                                     return {
                                         ...currentValue,
                                         title: event.target.value
@@ -48,13 +48,15 @@ const CreateTest =  () => {
                             </div>
 
                             <div className="createBlock-info-description">
-                                <label htmlFor='description' className='createBlock-info-label'>Description:</label>
-                                <textarea name='description' className='createBlock-info-textarea' type="text" onChange={(event) => setTestObj((currentValue) => {
-                                    return {
-                                        ...currentValue,
-                                        description: event.target.value
-                                    }
-                                })} />
+                                <TextField id="outlined-multiline-flexible"
+                                    rows={5}
+                                    label="Description"
+                                    multiline name='description' className='createBlock-info-textarea' type="text" onChange={(event) => setTestObj((currentValue) => {
+                                        return {
+                                            ...currentValue,
+                                            description: event.target.value
+                                        }
+                                    })} />
                             </div>
                         </div>
 

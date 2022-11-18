@@ -9,9 +9,7 @@
 }
 
 .schedule-container {
-    background-color: rgb(240, 244, 247);
-    padding: 24px 36px 24px 36px;
-    border-radius: 5px;
+     
     width: 33%;
     height: 293px;
 }
@@ -53,12 +51,12 @@
     align-items: center;
     margin-left: 12px;
     margin-right: 8px;
-    color: #00D8F6;
+    color:  #1976d2;
     margin-bottom: 24px;
 }
 
 .schedule-month-title-year {
-    color: #00D8F6;
+    color:  #1976d2;
     font-weight: bold;
 }
 
@@ -71,7 +69,7 @@
 
 .schedule-navigator-trigger {
     margin-top: 16px;
-    color: #00D8F6;
+    color:  #1976d2;
     font-weight: bold;
     cursor: pointer;
     border-bottom: 2px solid transparent;
@@ -79,13 +77,11 @@
 }
 
 .schedule-navigator-trigger:hover {
-    border-bottom: 2px solid #00D8F6;
+    border-bottom: 2px solid  #1976d2;
 }
 
 .schedule-tasks { 
     height: 293px;
     width: 50%;
-    background-color: rgb(240, 244, 247);
-    padding: 24px 36px 24px 36px;
-    border-radius: 5px;
+     
 }

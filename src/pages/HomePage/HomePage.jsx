@@ -5,6 +5,7 @@ import './HomePage.css';
 import userImg from '../../assets/images/user.jpg';
 import user2Img from '../../assets/images/user2.jpg';
 import gearIcon from '../../assets/images/gear.png';
+import { Link } from 'react-router-dom';
 
 const userMock = {
     name: 'Vitaly Zhuk',
@@ -49,7 +50,7 @@ const HomePage = () => {
                         </div>
 
                         <div className="profile-banner-info-about-top-right">
-                            <img className='profile-banner-info-about-top-right-icon' src={gearIcon} />
+                        <Link to='/profile/edit/'><img className='profile-banner-info-about-top-right-icon' src={gearIcon} /> </Link>
                         </div>
 
                     </div>

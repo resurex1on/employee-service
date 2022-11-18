@@ -5,6 +5,7 @@ import './CreateTask.css';
 import userImg from '../../assets/images/user.jpg';
 import user2Img from '../../assets/images/user2.jpg';
 import { useEffect } from 'react';
+import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 
 
 const testMocks = [
@@ -90,11 +91,10 @@ const CreateTask = () => {
             <div className='createTask'>
                 <h1 className='createTask-name'>Create new task</h1>
                 <div className='createTask-block-row start'>
-                    <label htmlFor='taskTitle'>Title:</label>
-                    <input type="text" name='taskTitle' className='createTask-title input' />
+                    <TextField id="standard-basic" label="Title" variant="standard" type="text" name='taskTitle' className='createTask-title input' />
                 </div>
 
-                <p className='create-task-subtitle'>Interval</p>
+
                 <div className='createTask-block-row start'>
                     <div className='createTask-block-item'>
                         <label htmlFor='taskDateFrom'>From:</label>
@@ -113,8 +113,7 @@ const CreateTask = () => {
                 </div>
 
                 <div className='createTask-search block'>
-                    <label className='createTask-search label' htmlFor='assign'>Assign to:</label>
-                    <input type="text" name='search' className='createTask-search input' value={userSearch} onChange={(event) => {
+                    <TextField id="standard-basic" label="Assign to" variant="standard" type="text" name='search' className='createTask-search input' value={userSearch} onChange={(event) => {
                         setUserSearch(event.target.value)
                     }} />
                 </div>
@@ -131,15 +130,15 @@ const CreateTask = () => {
                         </div>
                     }) : <></>}
                 </div>
-                <div className='testBlock'>
-                    <label className="testLabel" htmlFor="test">Choose test:</label>
-                    <select className="selectTest" name="test" placeholder="Choose test">
-                        {tests.length ? tests.map((test) => {
-                            return <option value=""> {test.title}</option>
-                        }) : <>There is not single test</>
-                        }
-                    </select>
-                </div>
+                    <FormControl size="small" className='question-type-control'>
+                        <InputLabel id="choose-test" >Choose test</InputLabel>
+                        <Select labelId="choose-test" label='Choose test' name="test" placeholder="Choose test">
+                            {tests.length ? tests.map((test) => {
+                                return <MenuItem value={test.title}> {test.title}</MenuItem>
+                            }) : <>There is not single test</>
+                            }
+                        </Select>
+                    </FormControl>
                 <div className='createTest-submit'>Submit</div>
             </div>
 

@@ -12,9 +12,7 @@
 .profile-banner {
     display: flex;
     flex-direction: row;
-    background-color: rgb(240, 244, 247);
-    padding: 24px 36px 24px 36px;
-    border-radius: 5px;
+     
 }
 
 .profile-banner-image {
@@ -75,7 +73,7 @@
     margin-right: 24px;
     padding: 8px 12px 8px 12px;
     background-color: rgb(240, 244, 247);
-    color: #00D8F6;
+    color:  #1976d2;
     font-weight: 600;
     border-radius: 8px;
     transition: .3s;
@@ -83,7 +81,7 @@
 }
 
 .profile-banner-info-bottom-item-manager:hover {
-    background-color: #00D8F6;
+    background-color:  #1976d2;
     color: #ffffff;
 }
 

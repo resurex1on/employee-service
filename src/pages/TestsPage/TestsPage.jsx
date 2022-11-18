@@ -4,6 +4,7 @@ import TestList from '../../components/TestList/TestList';
 import UsersList from '../../components/UsersList/UsersList';
 import CreateTask from '../../components/CreateTask/CreateTask';
 import './TestsPage.css';
+import { Typography } from '@mui/material';
 
 const testMock = {
     title: 'example',
@@ -48,10 +49,12 @@ const TestsPage = () => {
     return (
         <div className='testsPage-container'>
             <ul className="testsPage-navbar">
-                <li className={activeTab === 0 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(0)}>Create new test</li>
-                <li className={activeTab === 3 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(3)}>Create task</li>
-                <li className={activeTab === 1 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(1)}>Tests list</li>
-                <li className={activeTab === 2 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(2)}>Users list</li>
+                <li className={activeTab === 0 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(0)}>
+                    <Typography variant="h6" gutterBottom>Tests </Typography>
+                </li>
+                <li className={activeTab === 3 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(3)}>
+                    <Typography variant="h6" gutterBottom>Tasks </Typography>
+                </li>
             </ul>
 
             {getContent()}

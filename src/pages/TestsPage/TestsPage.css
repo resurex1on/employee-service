@@ -4,20 +4,19 @@
     align-items: center;
     height: 58px;
     background-color: rgb(240, 244, 247);
+    width: 100%;
 }
 
 .testsPage-navbar-item {
     list-style-type: none;
     margin-right: 24px;
     font-weight: bold;
-    border-bottom: 2px solid transparent;
     transition: .2s;
     cursor: pointer;
 }
 
 .testsPage-navbar-item.active {
-    color: #00D8F6;
-    border-bottom: 2px solid #00D8F6;
+    color:  #1976d2;
 }
 
 .testsPage-navbar-item:last-child {

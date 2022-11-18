@@ -12,15 +12,13 @@ import TestsPage from './pages/TestsPage/TestsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import StatisticPage from './pages/StatisticPage/StatisticPage';
 import Profile from './pages/Profile/Profile';
+import EditProfile from './components/EditProfile/EditProfile';
 
 const App = function () {
   return (
     <Router>
       <Header />
       <div className='app-container'>
-        {(window.location.pathname !== '/login') ? <div className='app-container-panel'>
-          <LeftPanel />
-        </div> : <></>}
 
         <div className='app-container-content'>
 
@@ -32,6 +30,7 @@ const App = function () {
             <Route path='/register' element={<LoginPage type = 'register'/>}/>
             <Route path='/statistic' element={<StatisticPage />}/>
             <Route path='/profile' element={<Profile isCurrentUserOwner={true} />}/>
+            <Route path='/profile/edit' element={<EditProfile />}/>
           </Routes>
         </div> 
       </div>

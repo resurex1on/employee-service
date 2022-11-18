@@ -18,6 +18,10 @@
     margin-top: 12px;
 }
 
+.singleSelect-title {
+    margin-top: 24px;
+}
+
 .singleSelect-answers-item {
     margin-top: 12px;
     display: flex;
@@ -29,7 +33,7 @@
 }
 
 .singleSelect-newAnswer {
-    color: #00D8F6;
+    color:  #1976d2;
     cursor: pointer;
     margin-top: 12px;
     display: block;

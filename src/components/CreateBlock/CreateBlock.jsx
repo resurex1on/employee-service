@@ -4,6 +4,7 @@ import MultiSelect from '../MultiSelect/MultiSelect';
 import { TestContext } from '../CreateTest/CreateTest';
 import './CreateBlock.css';
 import Rate from '../Rate/Rate';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
 const options = [
     { value: 'singleSelect', label: 'Single-select' },
@@ -36,58 +37,61 @@ const CreateBlock = () => {
             {testObj.questions.map((question, index) => {
                 return <div className='createBlock'>
                     <div className='createBlock-type'>
-                        <p className='createBlock-type-label'>Question type:</p>
-                        <select className='createBlock-type-select' name='questionType' value={question.type} onChange={(event) => setTestObj((currentTestObj) => {
-                            const updatedQuestions = currentTestObj.questions;
-                            const questionType = event.target.value;
+                        <FormControl size="small">
+                            <InputLabel id="question-type-label">Question type</InputLabel>
+                            <Select
+                                labelId="question-type-label" label="Question type" name='questionType' value={question.type} onChange={(event) => setTestObj((currentTestObj) => {
+                                    const updatedQuestions = currentTestObj.questions;
+                                    const questionType = event.target.value;
 
-                            updatedQuestions[index] = {
-                                type: questionType,
-                                title: '',
-                                answers: [{
-                                    id: 0,
-                                    text: '',
-                                    isCorrect: false
-                                }]
-                            }
+                                    updatedQuestions[index] = {
+                                        type: questionType,
+                                        title: '',
+                                        answers: [{
+                                            id: 0,
+                                            text: '',
+                                            isCorrect: false
+                                        }]
+                                    }
 
-                            if (questionType === 'rate') {
-                                updatedQuestions[index] = {
-                                    ...updatedQuestions[index],
-                                    answers: [{
-                                        id: 0,
-                                        isActive: 0
-                                    },
-                                    {
-                                        id: 1,
-                                        isActive: 0
-                                    },
-                                    {
-                                        id: 2,
-                                        isActive: 0
-                                    },
-                                    {
-                                        id: 3,
-                                        isActive: 0
-                                    },
-                                    {
-                                        id: 4,
-                                        isActive: 0
-                                    }]
+                                    if (questionType === 'rate') {
+                                        updatedQuestions[index] = {
+                                            ...updatedQuestions[index],
+                                            answers: [{
+                                                id: 0,
+                                                isActive: 0
+                                            },
+                                            {
+                                                id: 1,
+                                                isActive: 0
+                                            },
+                                            {
+                                                id: 2,
+                                                isActive: 0
+                                            },
+                                            {
+                                                id: 3,
+                                                isActive: 0
+                                            },
+                                            {
+                                                id: 4,
+                                                isActive: 0
+                                            }]
+                                        }
+                                    }
+
+                                    return {
+                                        ...currentTestObj,
+                                        questions: updatedQuestions
+                                    }
+                                })}>
+                                {
+                                    options.map((option) => {
+                                        return <MenuItem value={option.value}>{option.label}</MenuItem>
+                                    })
                                 }
-                            }
-
-                            return {
-                                ...currentTestObj,
-                                questions: updatedQuestions
-                            }
-                        })}>
-                            {
-                                options.map((option) => {
-                                    return <option value={option.value}>{option.label}</option>
-                                })
-                            }
-                        </select>
+                            </Select>
+                        </FormControl>
                     </div>
 
                     {getQuestionType(question.type, index)}
