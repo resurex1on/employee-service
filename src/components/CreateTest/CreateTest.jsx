@@ -1,4 +1,5 @@
-import { TextField, TextareaAutosize } from '@mui/material';
+import { TextField, TextareaAutosize, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { createContext, useState, useEffect } from 'react';
 import { createTest } from '../../helpers/back.helper';
 import CreateBlock from '../CreateBlock/CreateBlock';
@@ -35,7 +36,15 @@ const CreateTest = () => {
         <TestContext.Provider value={[testObj, setTestObj]}>
             <div className='createTest-container'>
                 <div className="createTest-creating">
-                    <h1 className='createTest-title'>Creating</h1>
+                    <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+                        <Typography
+                            variant="h3"
+                            className='createTest-title'
+                            gutterBottom
+                        >
+                            Creating
+                        </Typography>
+                    </Box>
                     <div className="createTest-creating-content">
                         <div className='createBlock-info'>
                             <div className="createBlock-info-title">
@@ -77,14 +86,23 @@ const CreateTest = () => {
                                 }
                             });
                         }}>New question +</a>
+
+                        <div className='createTest-submit' onClick={async () => {
+                            console.log(await createTest(testObj));
+                        }}>Submit</div>
                     </div>
-                    <div className='createTest-submit' onClick={async () => {
-                        console.log(await createTest(testObj));
-                    }}>Submit</div>
                 </div>
 
                 <div className="createTest-displaying">
-                    <h1 className='createTest-title'>Displaying</h1>
+                    <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+                        <Typography
+                            variant="h3"
+                            className='createTest-title'
+                            gutterBottom
+                        >
+                            Displaying
+                        </Typography>
+                    </Box>
 
                     <TestDisplay />
 

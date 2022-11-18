@@ -23,14 +23,7 @@ const MultiSelect = ({ index }) => {
                 }}/>
             </div>
 
-            <Typography
-                variant="subtitle1"
-                noWrap
-                component="div"
-                sx={{ display: { xs: 'none', sm: 'block' } }}
-              >
-                Answers:
-              </Typography>
+            <p className='singleSelect-title'>Answers:</p>
               
             <div className='multiSelect-answers'>
                 {testObj.questions[index].answers.map((answer, indexAnswer) => {

@@ -9,7 +9,7 @@ const SingleSelect = ({ index }) => {
     return (
         <div className='singleSelect'>
             <div className='singleSelect-question'>
-                <TextField id="outlined-basic" label="Question" variant="outlined" className='createBlock-info-input' name='question' type="text" onChange={(event) => {
+                <TextField id="outlined-basic" label="Question" variant="standard" className='createBlock-info-input' name='question' type="text" onChange={(event) => {
                         setTestObj((currentTestObj) => {
                             const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
 

@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
-import {HandySvg} from 'handy-svg';
+import { HandySvg } from 'handy-svg';
 import { TestContext } from '../CreateTest/CreateTest';
 import './Rate.css';
 import starSvg from '../../assets/images/star.svg'
+import { Box, Rating, TextField } from '@mui/material';
 
 const Rate = ({ index }) => {
     const [testObj, setTestObj] = useContext(TestContext);
@@ -10,23 +11,22 @@ const Rate = ({ index }) => {
 
     const activateElements = (eventItemId) => {
         setTestObj(() => {
-             const newAnswers = testObj.questions[index].answers.map((currentAnswer, answerIndex) => {
-                return {...currentAnswer, isActive : (eventItemId >= answerIndex)}
+            const newAnswers = testObj.questions[index].answers.map((currentAnswer, answerIndex) => {
+                return { ...currentAnswer, isActive: (eventItemId >= answerIndex) }
             });
-            const newQuestion = {...testObj.questions[index], answers : newAnswers};
+            const newQuestion = { ...testObj.questions[index], answers: newAnswers };
             const newQuestions = JSON.parse(JSON.stringify(testObj.questions));
             newQuestions[index] = newQuestion;
 
-            return {...testObj, questions : newQuestions}
-    })
-};
+            return { ...testObj, questions: newQuestions }
+        })
+    };
 
     return (
         <div className='multiSelect'>
             <div className='multiSelect-question'>
-                <label className='multiSelect-question-label' htmlFor='question'>Question:</label>
-                <input className='createBlock-info-input multiSelect-info-input' name='question' type="text" onChange={(event) => {
-                     setTestObj((currentTestObj) => {
+                <TextField id="outlined-basic" label="Question" variant="standard" className='createBlock-info-input multiSelect-info-input' name='question' type="text" onChange={(event) => {
+                    setTestObj((currentTestObj) => {
                         const newQuestions = JSON.parse(JSON.stringify(currentTestObj.questions));
 
                         newQuestions[index] = {
@@ -36,26 +36,11 @@ const Rate = ({ index }) => {
 
                         return { ...currentTestObj, questions: newQuestions }
                     });
-                }}/>
+                }} />
             </div>
 
             <div className='rate-answers'>
-                <p>Answers:</p>
-
-                <div className='rate-answers-items' ref={answersRef}>
-                {(testObj.questions[index]) ? (testObj.questions[index].answers.map((answer, indexAnswer) => {
-                    return <HandySvg
-                    onMouseOver={(event) => {
-                    const eventItemId = indexAnswer;
-                        activateElements(eventItemId);
-                    }}
-                    src={starSvg}
-                    className={`icon ${(answer.isActive)? 'icon-active' : ''}`}
-                    width="32"
-                    height="32"
-                />
-                })) : <></>}
-                    </div>
+                <Rating name="size-large" defaultValue={2} size="large" />
             </div>
         </div>
     );

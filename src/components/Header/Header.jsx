@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -19,6 +20,14 @@ import { Link } from 'react-router-dom';
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    setUserData(() => {
+      return JSON.parse(localStorage.getItem('userData'))
+    })
+  }, []);
+
   const isMenuOpen = Boolean(anchorEl);
 
   const handleProfileMenuOpen = (event) => {
@@ -51,8 +60,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link to='/profile'><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <Link to='/profile'> <MenuItem onClick={handleMenuClose}>Profile</MenuItem> </Link>
+      <Link to='/login'> <MenuItem onClick={handleMenuClose}>Log out</MenuItem> </Link>
     </Menu>
   );
 
@@ -60,17 +69,17 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              className='logo-typography'
-              sx={{ display: { xs: 'none', sm: 'block' } }}
-            >
-              <Link to='/home'>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            className='logo-typography'
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            <Link to='/home'>
               Employee service
-              </Link>
-            </Typography>
+            </Link>
+          </Typography>
 
           <Link to='/tests'>
             <IconButton
@@ -96,7 +105,7 @@ export default function PrimarySearchAppBar() {
           </Link>
 
 
-          <Link to='/tests'>
+          <Link to='/1-on-1s'>
             <IconButton
               size="large"
               edge="end"

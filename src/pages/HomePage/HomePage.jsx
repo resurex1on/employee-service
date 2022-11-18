@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import News from '../../components/News/News';
 import Schedule from '../../components/Schedule/Schedule';
 import './HomePage.css';
@@ -32,6 +32,10 @@ const userMock = {
 
 const HomePage = () => {
     const [userData, setUserData] = useState(userMock);
+
+    useEffect(() => {
+        
+    }, []);
 
     return (
         <div className='home-container'>

@@ -6,7 +6,7 @@ const getCookie = (name) => {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
-const uri = 'https://d2a2-193-16-224-1.eu.ngrok.io';
+const uri = 'https://16c6-193-16-224-10.eu.ngrok.io';
 
 const headers = {
     'Content-Type': 'application/json',

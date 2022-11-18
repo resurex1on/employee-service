@@ -23,9 +23,10 @@
 .rate-answers {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-top: 8px;
+    margin-top: 24px;
+
 }
 
 .rate-answers-items {

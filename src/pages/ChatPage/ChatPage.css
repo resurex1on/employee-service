@@ -1,0 +1,124 @@
+.chatPage-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+    height: calc(100% - 64px);
+}
+
+.chatPage-list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    overflow: scroll;
+}
+
+.chatPage-label {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.chatPage-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+    color: #1976d2;
+    border: 2px solid #1976d2;
+    padding: 12px;
+    width: 250px;
+    border-radius: 6px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chatPage-item:hover, .chatPage-item.active {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+.chatPage-item-name-text {
+    margin-left: 12px;
+    font-weight: 600;
+}
+
+.chatPage-item-name {
+    width: 200px;
+}
+
+.chatPage-chat {
+    margin-top: 24px;
+    height: calc(100vh - 415px);
+    overflow-y: scroll;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 12px;
+}
+
+.chatPage-chat-message-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.chatPage-chat-message-user-name {
+    margin-left: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.chatPage-chat-message {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+
+.chatPage-chat-message.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 24px;
+}
+
+.chatPage-chat-message.reverse > .chatPage-chat-message-user {
+    flex-direction: column;
+}
+
+.chatPage-chat-message.reverse > .chatPage-chat-message-user > .chatPage-chat-message-user-name{
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.chatPage-chat-message.reverse > .chatPage-chat-message-user > .chatPage-chat-message-content {
+    margin-right: 24px !important;
+    margin-left: 0 !important;
+}
+
+.chatPage-chat-message.reverse > .chatPage-chat-message-user {
+   align-items: flex-end;
+}
+
+.chatPage-chat-message-content {
+    margin-left: 24px !important;
+    max-width: 400px;
+    text-align: justify;
+}
+
+.chatPage-input {
+    margin-bottom: 12px !important;
+    width: 100%;
+}
+
+.chatPage-chat-no-active-chat {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatPage-chat-no-active-chat-image {
+    width: 250px;
+    margin-bottom: 8px;
+}

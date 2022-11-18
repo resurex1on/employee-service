@@ -61,3 +61,14 @@
     margin-bottom: 20px;
     cursor: pointer;
 }
+
+.createTest-creating-content {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.createTest-submit {
+    margin-top: 12px;
+}

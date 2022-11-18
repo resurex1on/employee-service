@@ -12,6 +12,7 @@ import TestsPage from './pages/TestsPage/TestsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import StatisticPage from './pages/StatisticPage/StatisticPage';
 import Profile from './pages/Profile/Profile';
+import ChatPage from './pages/ChatPage/ChatPage';
 import EditProfile from './components/EditProfile/EditProfile';
 
 const App = function () {
@@ -31,6 +32,7 @@ const App = function () {
             <Route path='/statistic' element={<StatisticPage />}/>
             <Route path='/profile' element={<Profile isCurrentUserOwner={true} />}/>
             <Route path='/profile/edit' element={<EditProfile />}/>
+            <Route path='/1-on-1s' element={<ChatPage />}/>
           </Routes>
         </div> 
       </div>

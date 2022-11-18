@@ -83,7 +83,6 @@ const CreateTask = () => {
                 return userMocks.filter(user => user.name.includes(userSearch))
             })
         }
-
     }, [userSearch]);
 
     return (

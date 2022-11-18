@@ -44,6 +44,7 @@ const LoginPage = ({ type }) => {
        const loginData = (type === 'login') ? await logIn(userData) : await register(userData);
 
        document.cookie = encodeURIComponent('token') + '=' + encodeURIComponent(loginData.token);
+       localStorage.setItem('userData', JSON.stringify(loginData.user))
     };
 
     return (
