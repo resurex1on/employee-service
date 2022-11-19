@@ -6,7 +6,7 @@ const getCookie = (name) => {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
-const uri = 'http://localhost:3001';
+const uri = 'https://215b-46-53-244-171.eu.ngrok.io';
 
 const headers = {
     'Content-Type': 'application/json',

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import CreateTest from '../../components/CreateTest/CreateTest';
 import TestList from '../../components/TestList/TestList';
-import UsersList from '../../components/UsersList/UsersList';
-import CreateTask from '../../components/CreateTask/CreateTask';
 import './TestsPage.css';
 import { Typography } from '@mui/material';
+import Notification from '../../components/Notification/Notification'
 
 const TestsPage = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -26,6 +25,7 @@ const TestsPage = () => {
 
     return (
         <div className='testsPage-container'>
+            <Notification />
             <ul className="testsPage-navbar">
                 <li className={activeTab === 0 ? 'testsPage-navbar-item active' : 'testsPage-navbar-item'} onClick={() => setActiveTab(0)}>
                     <Typography variant="h6" gutterBottom>List </Typography>

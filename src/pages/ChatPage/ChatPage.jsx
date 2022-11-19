@@ -18,7 +18,7 @@ const ChatPage = () => {
     const [userData, setUserData] = useState(null);
     const [userList, setUserList] = useState([]);
     const [messageText, setMessageText] = useState('');
-    const [socket, setSocket] = useState(io('http://localhost:3001'));
+    const [socket, setSocket] = useState(io('https://215b-46-53-244-171.eu.ngrok.io'));
 
     useEffect(() => {
         getUser(JSON.parse(localStorage.getItem('userData')).id).then((data) => {
@@ -89,7 +89,11 @@ const ChatPage = () => {
             return (message.userFromId === userData.id && message.userToId === activeChat)
         });
 
-        setCurrentChatMessages([...currentReceivedMessages, ...currentSentMessages])
+        setCurrentChatMessages([...currentReceivedMessages, ...currentSentMessages].sort((a, b) => {
+            const aDate = new Date(a.createdAt).getTime();
+            const bDate = new Date(b.createdAt).getTime();
+            return aDate - bDate
+        }))
     };
 
     const connectToSocket = () => {
