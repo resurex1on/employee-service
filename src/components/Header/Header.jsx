@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
-import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,6 +12,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MessageIcon from '@mui/icons-material/Message';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import PanToolIcon from '@mui/icons-material/PanTool';
+import TaskIcon from '@mui/icons-material/Task';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
@@ -104,7 +104,53 @@ export default function PrimarySearchAppBar() {
             </IconButton>
           </Link>
 
+          <Link to='/tasks'>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="Tests"
+              aria-haspopup="true"
+              color="inherit"
+              className='header-button-link'
+            >
 
+              <TaskIcon />
+              <Typography
+                variant="subtitle1"
+                noWrap
+                component="div"
+                className='icon-label'
+                sx={{ display: { xs: 'none', sm: 'block' } }}
+              >
+                Tasks
+              </Typography>
+            </IconButton>
+          </Link>
+
+          
+
+          <Link to='/feedback'>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="Tests"
+              aria-haspopup="true"
+              color="inherit"
+              className='header-button-link'
+            >
+
+              <PanToolIcon />
+              <Typography
+                variant="subtitle1"
+                noWrap
+                component="div"
+                className='icon-label'
+                sx={{ display: { xs: 'none', sm: 'block' } }}
+              >
+                High five
+              </Typography>
+            </IconButton>
+          </Link>
           <Link to='/1-on-1s'>
             <IconButton
               size="large"
@@ -170,6 +216,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <AccountCircle />
+              {(userData && userData.name) ? userData.name : ''}
             </IconButton>
           </Box>
         </Toolbar>

@@ -1,13 +1,18 @@
 .testList {
     width: 100%;
+    height: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
+
 
 .testList-item {
     display: flex;
     flex-direction: column;
-    border: 2px solid  #1976d2;
+    border: 1px solid  #1976d2;
     padding: 8px 12px 8px 12px;
     margin-bottom: 12px;
+    border-radius: 4px;
 }
 
 .testList-item-block {
@@ -51,4 +56,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.testList-no-tests {
+    width: 30%;
+    margin: 0 auto;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

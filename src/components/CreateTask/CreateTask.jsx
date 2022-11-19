@@ -5,7 +5,8 @@ import './CreateTask.css';
 import userImg from '../../assets/images/user.jpg';
 import user2Img from '../../assets/images/user2.jpg';
 import { useEffect } from 'react';
-import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { getTests } from '../../helpers/back.helper';
 
 
 const testMocks = [
@@ -71,8 +72,14 @@ const userMocks = [
 const CreateTask = () => {
     const [users, setUsers] = useState(userMocks);
     const [task, setTask] = useState({});
-    const [tests, setTests] = useState(testMocks);
+    const [tests, setTests] = useState([]);
     const [userSearch, setUserSearch] = useState("");
+
+    useEffect(() => {
+        getTests().then(data => {
+            setTests(data)
+        })
+    }, []);
 
     useEffect(() => {
         if (userSearch === '') {
@@ -89,59 +96,64 @@ const CreateTask = () => {
         <>
             <div className='createTask'>
                 <h1 className='createTask-name'>Create new task</h1>
-                <div className='createTask-block-row start'>
-                    <TextField id="standard-basic" label="Title" variant="standard" type="text" name='taskTitle' className='createTask-title input' />
-                </div>
+                <div className="createTast-container">
 
-
-                <div className='createTask-block-row start'>
-                    <div className='createTask-block-item'>
-                        <label htmlFor='taskDateFrom'>From:</label>
-                        <input type="date" name='taskDateFrom' className='createTask-input-date' />
+                    <div className='createTask-block-row start'>
+                        <TextField id="standard-basic" label="Title" variant="standard" type="text" name='taskTitle' className='createTask-title input' />
                     </div>
 
-                    <div className='createTask-block-item date-to'>
-                        <label htmlFor='taskDateFrom'>To:</label>
-                        <input type="date" name='taskDateFrom' className='createTask-input-date' />
-                    </div>
 
-                    <div className='createTask-block-item start repeat'>
-                        <label htmlFor='taskDateFrom'>Should repeat:</label>
-                        <input type="checkbox" name='taskDateFrom' className='createTask-input-repeat' />
-                    </div>
-                </div>
-
-                <div className='createTask-search block'>
-                    <TextField id="standard-basic" label="Assign to" variant="standard" type="text" name='search' className='createTask-search input' value={userSearch} onChange={(event) => {
-                        setUserSearch(event.target.value)
-                    }} />
-                </div>
-
-                <div className='createTask-userlist'>
-                    {users ? users.map((user) => {
-                        return <div className='createTask-usersList-item'>
-                            <img className='createTask-usersList-item-image' src={userImg} alt="" />
-
-                            <div className="createTask-usersList-item-info">
-                                <p className='createTask-usersList-item-name'>{user.name}</p>
-                                <p className='createTask-usersList-item-position'>{user.position}</p>
-                            </div>
+                    <div className='createTask-block-row start'>
+                        <div className='createTask-block-item'>
+                            <label htmlFor='taskDateFrom'>From:</label>
+                            <input type="date" name='taskDateFrom' className='createTask-input-date' />
                         </div>
-                    }) : <></>}
+
+                        <div className='createTask-block-item date-to'>
+                            <label htmlFor='taskDateFrom'>To:</label>
+                            <input type="date" name='taskDateFrom' className='createTask-input-date' />
+                        </div>
+
+                        <div className='createTask-block-item start repeat'>
+                            <label htmlFor='taskDateFrom'>Should repeat:</label>
+                            <input type="checkbox" name='taskDateFrom' className='createTask-input-repeat' />
+                        </div>
+                    </div>
+
+                    <div className='createTask-search block'>
+                        <TextField id="standard-basic" label="Assign to" variant="standard" type="text" name='search' className='createTask-search input' value={userSearch} onChange={(event) => {
+                            setUserSearch(event.target.value)
+                        }} />
+                    </div>
+
+                    <div className='createTask-userlist'>
+                        {users ? users.map((user) => {
+                            return <div className='createTask-usersList-item'>
+                                <img className='createTask-usersList-item-image' src={userImg} alt="" />
+
+                                <div className="createTask-usersList-item-info">
+                                    <p className='createTask-usersList-item-name'>{user.name}</p>
+                                    <p className='createTask-usersList-item-position'>{user.position}</p>
+                                </div>
+                            </div>
+                        }) : <></>}
+                    </div>
+
+                    <div className="createTask-bottom">
+                        <FormControl size="small" className='createTask-select question-type-control'>
+                            <InputLabel id="choose-test">Choose test</InputLabel>
+                            <Select labelId="choose-test" label='Choose test' name="test" placeholder="Choose test">
+                                {tests.length ? tests.map((test) => {
+                                    return <MenuItem value={test.title}> {test.title}</MenuItem>
+                                }) : <>There is not single test</>
+                                }
+                            </Select>
+                        </FormControl>
+                        <Button variant="outlined">Submit</Button>
+                    </div>
+
                 </div>
-                    <FormControl size="small" className='question-type-control'>
-                        <InputLabel id="choose-test" >Choose test</InputLabel>
-                        <Select labelId="choose-test" label='Choose test' name="test" placeholder="Choose test">
-                            {tests.length ? tests.map((test) => {
-                                return <MenuItem value={test.title}> {test.title}</MenuItem>
-                            }) : <>There is not single test</>
-                            }
-                        </Select>
-                    </FormControl>
-                <div className='createTest-submit'>Submit</div>
             </div>
-
-
         </>
     );
 }

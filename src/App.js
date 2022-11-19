@@ -14,6 +14,7 @@ import StatisticPage from './pages/StatisticPage/StatisticPage';
 import Profile from './pages/Profile/Profile';
 import ChatPage from './pages/ChatPage/ChatPage';
 import EditProfile from './components/EditProfile/EditProfile';
+import TasksPage from './pages/TasksPage/TasksPage';
 
 const App = function () {
   return (
@@ -33,6 +34,7 @@ const App = function () {
             <Route path='/profile' element={<Profile isCurrentUserOwner={true} />}/>
             <Route path='/profile/edit' element={<EditProfile />}/>
             <Route path='/1-on-1s' element={<ChatPage />}/>
+            <Route path='/tasks' element={<TasksPage />}/>
           </Routes>
         </div> 
       </div>
