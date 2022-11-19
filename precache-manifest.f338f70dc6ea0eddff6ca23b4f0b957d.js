@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "0f663014d1346426e2ab",
-    "url": "/employee-service/static/css/main.971698a5.chunk.css"
+    "revision": "cc4e4aef8888e6060510",
+    "url": "/employee-service/static/css/main.5d037f37.chunk.css"
   },
   {
-    "revision": "0f663014d1346426e2ab",
-    "url": "/employee-service/static/js/main.0f663014.chunk.js"
+    "revision": "cc4e4aef8888e6060510",
+    "url": "/employee-service/static/js/main.cc4e4aef.chunk.js"
   },
   {
-    "revision": "b524516da149fe07a640",
-    "url": "/employee-service/static/js/1.b524516d.chunk.js"
+    "revision": "b5b0d8130bbfb1512857",
+    "url": "/employee-service/static/js/1.b5b0d813.chunk.js"
   },
   {
-    "revision": "d36af6e74386ccd39588",
-    "url": "/employee-service/static/js/2.d36af6e7.chunk.js"
+    "revision": "ca7bee9d5d345cba8c6d",
+    "url": "/employee-service/static/js/2.ca7bee9d.chunk.js"
   },
   {
-    "revision": "308a46a4cbaea5c9fe20",
-    "url": "/employee-service/static/js/runtime~main.308a46a4.js"
+    "revision": "ac4623f4240cda83b31d",
+    "url": "/employee-service/static/js/runtime~main.ac4623f4.js"
   },
   {
     "revision": "567918c659af198e2aba1e2774352a7d",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/employee-service/static/media/star.9f501ac3.svg"
   },
   {
-    "revision": "970c7358fae5301beb4bb590690fb187",
+    "revision": "bad746d82af5bba7a24c578d5bf87583",
     "url": "/employee-service/index.html"
   }
 ];
